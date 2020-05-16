@@ -20,7 +20,7 @@ public class Job {
         nextId++;
     }
 
-    public Job(int Job, String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
         this.employer = employer;
@@ -29,7 +29,18 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-    public Job(Job job, String product_tester, Employer acme, Location desert, PositionType quality_control, CoreCompetency persistence) {
+    @Override
+    public String toString() {
+
+        return ("\n" +
+                "ID: " + getId() +
+                "\nName: " + getName() +
+                "\nEmployer: " + getEmployer() +
+                "\nLocation: " + getLocation() +
+                "\nPosition Type: " + getPositionType() +
+                "\nCore Competency: " + getCoreCompetency() +
+                "\n");
+
     }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -93,4 +104,6 @@ public class Job {
     public int getId() {
         return id;
     }
+
+
 }
