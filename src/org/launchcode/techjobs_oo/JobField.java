@@ -15,7 +15,7 @@ public abstract class JobField {
     public JobField(String value) {
         this();
         this.value = value;
-        if (this.value.equals("")) {
+        if (this.value.isBlank()) {
             this.value += "Data not available";
         }
     }
